@@ -15,14 +15,14 @@ handle = UcsHandle(ip=args.ip, username=args.username, password=args.password, s
 handle.login()
 
 #Start backup scripts here
-backup_dir = "c:\ucsbackup"
+backup_dir = 'c:\ucsbackup'
 full_state_backup_filename = "full-state_config_backup.xml"
 backup_ucs(handle,
            backup_type = "full-state",
            file_dir = backup_dir,
            file_name = full_state_backup_filename)
 
-config_all_backup_filename = "config-all_config_backup,xml"
+config_all_backup_filename = "config-all_config_backup.xml"
 backup_ucs(handle,
            backup_type = "config-all",
            file_dir = backup_dir,

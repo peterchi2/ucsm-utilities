@@ -11,11 +11,11 @@ parser.add_argument("-p", "--password", help="Password")
 args = parser.parse_args()
 
 #Log into UCS using UcsHandle
-handle = UcsHandle(ip=args.ip, username=args.username, password=args.password)
+handle = UcsHandle(ip=args.ip, username=args.username, password=args.password, secure=False)
 handle.login()
 
 #Start backup scripts here
-backup_dir = "/home/user/backup"
+backup_dir = "c:\ucsbackup"
 full_state_backup_filename = "full-state_config_backup.xml"
 backup_ucs(handle,
            backup_type = "full-state",

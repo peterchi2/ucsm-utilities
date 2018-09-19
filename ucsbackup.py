@@ -1,10 +1,17 @@
 #Import UCS modules
 from ucsmsdk.ucshandle import UcsHandle
 from ucsmsdk.utils.ucsbackup import backup_ucs
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", "--ip", help="IP Address")
+parser.add_argument("-u", "--username", help="Username")
+parser.add_argument("-p", "--password", help="Password")
+
+args = parser.parse_args()
 
 #Log into UCS using UcsHandle
-handle = UcsHandle("10.10.20.113", "ucspe", "ucspe", secure=False)
+handle = UcsHandle(ip=args.ip, username=args.username, password=args.password)
 handle.login()
 
 #Start backup scripts here

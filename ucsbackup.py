@@ -11,7 +11,7 @@ parser.add_argument("-p", "--password", help="Password")
 args = parser.parse_args()
 
 #Log into UCS using UcsHandle
-handle = UcsHandle(ip=args.ip, username=args.username, password=args.password, secure=False)
+handle = UcsHandle(ip=args.ip, username=args.username, password=args.password)
 handle.login()
 
 #Start backup scripts here

@@ -1,7 +1,9 @@
 #Import UCS modules
+import argparse
+
 from ucsmsdk.ucshandle import UcsHandle
 from ucsmsdk.utils.ucsbackup import backup_ucs
-import argparse
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -16,7 +18,7 @@ def main():
     handle.login()
 
 #Start backup scripts here
-def ucsmbackup():
+def ucsmbackup(handle):
     backup_dir = "/home/user/backup"
     full_state_backup_filename = "full-state_config_backup.xml"
     backup_ucs(handle,
